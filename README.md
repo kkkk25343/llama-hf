@@ -22,14 +22,38 @@ We experimented with **three different foundation models** to evaluate how model
    - Serves as the reference model for later comparisons in both performance and inference latency.
 
 2. **Llama_3_2_3B_Conversational_tuned_params+new_data.ipynb**  
-   - Applies a **model-centric approach** by adjusting LoRA hyperparameters and training configuration.  
+   - Applies a **model-centric approach** by adjusting LoRA hyperparameters and training configuration.
+     ```python
+     model = FastLanguageModel.get_peft_model(
+         model,
+         r = 16,              # increased from default 8
+         lora_alpha = 32,     # increased scaling factor
+         lora_dropout = 0.05, # added dropout for regularization
+     )
+     ```
+     ```python
+     training_args = TrainingArguments(
+        # warmup_steps: increased from 5 → 10
+        warmup_steps = 10,    
+        # learning_rate: reduced from 2e-4 → 1e-4 for more stable convergence
+        learning_rate = 1e-4
+     )
+     ```
+
+    # warmup_steps: increased from 5 → 10
+    warmup_steps = 10,    
+
+    # learning_rate: reduced from 2e-4 → 1e-4 for more stable convergence
+    learning_rate = 1e-4,
+     
    - Also applies a **data-centric approach** by extending the instruction dataset with additional samples to improve alignment quality.
      ```python
       dataset1 = load_dataset("mlabonne/FineTome-100k", split="train")
       dataset2 = load_dataset("jondurbin/airoboros-3.2", split="train")
       dataset = concatenate_datasets([dataset1, dataset2])
+     ```
 
-3. **Phi-3.5-mini-instruct.ipynb**  
+4. **Phi-3.5-mini-instruct.ipynb**  
    - Fine-tuning an alternative lightweight foundation model to compare with Llama-3 on CPU inference.  
    - Demonstrates that **smaller models can provide faster inference** in the final Gradio UI while maintaining reasonable instruction-following capability.
 
