@@ -31,7 +31,7 @@ We deployed three separate inference UIs on Hugging Face Spaces to compare model
 
 We experimented with **three different foundation models** to evaluate how model size, architecture, and data variations affect downstream performance and CPU-based inference speed. The fine-tuning processes and results are documented in the corresponding Jupyter notebooks:
 
-1. **Llama_3_2_1B+3B_Conversational_original.ipynb**  
+1. **Llama_3_2_3B_Conversational_original.ipynb**  
    - Baseline fine-tuning using the original Llama-3.2 3B conversational checkpoints.  
    - Serves as the reference model for later comparisons in both performance and inference latency.
 
