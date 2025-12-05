@@ -98,7 +98,59 @@ Once compiled, we ran the quantization tool to convert the full-precision GGUF m
 
 ## Hugging Face Deployment
 
-we create a Hugging Face Space
+After obtaining the full-precision GGUF model, we uploaded the quantized checkpoint to Hugging Face so it could be used for inference inside a Space.  
+The upload was performed using the following command:
+
+```bash
+huggingface-cli upload \
+  stevendhasoi/Iriseder \
+  /content/model_q4_k_m.gguf \
+  --repo-type=model
+
+After uploading the model, we created a new Hugging Face Space and replaced the default app.py with the script below:
+
+```bash
+
+import gradio as gr
+from llama_cpp import Llama
+from huggingface_hub import hf_hub_download
+
+# Download your model automatically
+model_path = hf_hub_download(
+    repo_id="stevendhasoi/Iriseder",
+    filename="model_q4_k_m.gguf"
+)
+
+# Load GGUF model
+llm = Llama(
+    model_path=model_path,
+    n_ctx=2048,
+    n_threads=4,
+)
+
+def chat_fn(message, history):
+    prompt = ""
+    for user, bot in history:
+        prompt += f"User: {user}\nAssistant: {bot}\n"
+
+    prompt += f"User: {message}\nAssistant:"
+
+    output = llm(
+        prompt,
+        max_tokens=256,
+        stop=["User:"],
+        echo=False
+    )
+
+    reply = output["choices"][0]["text"].strip()
+    return reply
+
+gr.ChatInterface(chat_fn).launch()
+
+
+We then added a requirements.txt file with the necessary dependencies.
+Once the Space finished building, the web UI successfully displayed the chat interface using the quantized GGUF Llama model. 
+
 
 
 ### UI 
