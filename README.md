@@ -106,10 +106,11 @@ huggingface-cli upload \
   stevendhasoi/Iriseder \
   /content/model_q4_k_m.gguf \
   --repo-type=model
+```
 
 After uploading the model, we created a new Hugging Face Space and replaced the default app.py with the script below:
 
-```bash
+```python
 
 import gradio as gr
 from llama_cpp import Llama
@@ -146,7 +147,7 @@ def chat_fn(message, history):
     return reply
 
 gr.ChatInterface(chat_fn).launch()
-
+```
 
 We then added a requirements.txt file with the necessary dependencies.
 Once the Space finished building, the web UI successfully displayed the chat interface using the quantized GGUF Llama model. 
