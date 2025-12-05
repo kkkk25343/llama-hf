@@ -5,6 +5,20 @@ This repository contains the implementation for Lab 2 of ID2223 (HT2025), focusi
 In this lab, we fine-tuned a Llama-3.2 3B model on the FineTome instruction dataset using PEFT techniques to reduce GPU memory usage during training.
 The training process was executed in Google Colab (T4 GPU), with periodic checkpoint saving and later conversion to GGUF format for CPU-based inference.
 
+### Model Interfaces
+
+We deployed three separate inference UIs on Hugging Face Spaces to compare model behavior and performance:
+
+- **Llama-3 Conversational (Original Fine-Tuning)**  
+  https://stevendhasoi-iris233.hf.space/
+
+- **Llama-3 Conversational (Tuned LoRA Parameters + Extended Dataset)**  
+  https://stevendhasoi-newllama.hf.space/
+
+- **Phi-3.5 Mini Instruct (Lightweight Baseline Model)**  
+  https://stevendhasoi-phi2223.hf.space/
+
+
 ### Key steps implemented
 - Set up a reproducible Python environment for LLM fine-tuning  
 - Applied **LoRA** for efficient adaptation of the model  
@@ -51,3 +65,7 @@ We experimented with **three different foundation models** to evaluate how model
    - Demonstrates that **smaller models can provide faster inference** in the final Gradio UI while maintaining reasonable instruction-following capability.
 
 Together, these experiments fulfill the lab requirement to explore multiple models and evaluate improvements through both model-centric and data-centric strategies.
+
+## GGUF Conversion
+
+## Hugging Face Deployment
