@@ -38,14 +38,7 @@ We experimented with **three different foundation models** to evaluate how model
         # learning_rate: reduced from 2e-4 → 1e-4 for more stable convergence
         learning_rate = 1e-4
      )
-     ```
-
-    # warmup_steps: increased from 5 → 10
-    warmup_steps = 10,    
-
-    # learning_rate: reduced from 2e-4 → 1e-4 for more stable convergence
-    learning_rate = 1e-4,
-     
+     ```     
    - Also applies a **data-centric approach** by extending the instruction dataset with additional samples to improve alignment quality.
      ```python
       dataset1 = load_dataset("mlabonne/FineTome-100k", split="train")
