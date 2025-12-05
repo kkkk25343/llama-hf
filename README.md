@@ -35,7 +35,7 @@ We experimented with **three different foundation models** to evaluate how model
    - Baseline fine-tuning using the original Llama-3.2 3B conversational checkpoints.  
    - Serves as the reference model for later comparisons in both performance and inference latency.
 
-2. **Llama_3_2_3B_Conversational_tuned_params+new_data.ipynb** (Task2.1)
+2. **Llama_3_2_3B_Conversational_tuned_params+new_data.ipynb** (Task **2.1**)
    - Applies a **model-centric approach** by adjusting LoRA hyperparameters and training configuration.
      ```python
      model = FastLanguageModel.get_peft_model(
@@ -60,7 +60,7 @@ We experimented with **three different foundation models** to evaluate how model
       dataset = concatenate_datasets([dataset1, dataset2])
      ```
 
-4. **Phi-3.5-mini-instruct.ipynb**  (Task2.2)
+4. **Phi-3.5-mini-instruct.ipynb**  (Task **2.2**)
    - Fine-tuning an alternative lightweight foundation model to compare with Llama-3 on CPU inference.  
    - Demonstrates that smaller models can provide faster inference in the final Gradio UI while maintaining reasonable instruction-following capability.
 
