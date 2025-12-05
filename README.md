@@ -69,3 +69,5 @@ Together, these experiments fulfill the lab requirement to explore multiple mode
 ## GGUF Conversion
 
 ## Hugging Face Deployment
+
+we create a Hugging Face Space
