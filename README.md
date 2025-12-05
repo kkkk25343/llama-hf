@@ -99,3 +99,9 @@ Once compiled, we ran the quantization tool to convert the full-precision GGUF m
 ## Hugging Face Deployment
 
 we create a Hugging Face Space
+
+
+### UI 
+This is a demo of how our UI is 
+<img width="3072" height="1582" alt="74c491aa4dcfc9a61a171affe7fe7ec9" src="https://github.com/user-attachments/assets/4347db4b-940d-47f7-a242-271067b7c9f5" />
+
