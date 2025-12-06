@@ -159,8 +159,9 @@ This is a demo of how our UI is
 <img width="3072" height="1582" alt="74c491aa4dcfc9a61a171affe7fe7ec9" src="https://github.com/user-attachments/assets/4347db4b-940d-47f7-a242-271067b7c9f5" />
 
 ### Result Comparisons
-We asked the same two questions on our 3 LLMs. Below are the responds:
+We asked the same two questions on our 3 LLMs. Below are the responses:
 <img width="3072" height="1582" alt="e9ac9cd58215819e4a84c9de36c7af52" src="https://github.com/user-attachments/assets/488cba34-3c2a-4d77-b327-e9631f02ce31" />
+The original model produced hallucinated facts. For example, it invented members of Roxette (Jonas Berggren is from Ace of Base) and duplicated Queen members. It generated repetitive sentences and incoherent structure. It is a failure response.
 <img width="3072" height="1582" alt="791db4981e9b0d61867b5af93d0ab4a3" src="https://github.com/user-attachments/assets/9e7a5613-63a1-4164-8424-40d93c8c3345" />
-
+The parameter-tuned model returned fully correct factual information for both bands, showed more coherent, natural, and structured responses, reduced hallucinations and removed repetition.
 
