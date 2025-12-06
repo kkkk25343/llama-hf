@@ -164,4 +164,7 @@ We asked the same two questions on our 3 LLMs. Below are the responses:
 The original model produced hallucinated facts. For example, it invented members of Roxette (Jonas Berggren is from Ace of Base) and duplicated Queen members. It generated repetitive sentences and incoherent structure. It is a failure response.
 <img width="3072" height="1582" alt="791db4981e9b0d61867b5af93d0ab4a3" src="https://github.com/user-attachments/assets/9e7a5613-63a1-4164-8424-40d93c8c3345" />
 The parameter-tuned model returned fully correct factual information for both bands, showed more coherent, natural, and structured responses, reduced hallucinations and removed repetition.
+The tuned model has the same architecture and parameter size as the original model, so inference speed remains almost unchanged. They are both very slow, with 100s+ to make a response.  
+<img width="3072" height="1582" alt="image" src="https://github.com/user-attachments/assets/d9341558-e057-4c4f-bf20-b33e697c407f" />
+The Phi-3.5-mini model  gives clearer and smoother answers. However, it sometimes talks too much, and occasionally ends a sentence early or gives details that are not fully precise. For example, Queen never won a grammy award but a lifetime achievement award. They also do not have a song called “Don'aval”.
 
