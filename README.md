@@ -62,7 +62,7 @@ We experimented with **three different foundation models** to evaluate how model
 
 4. **Phi-3.5-mini-instruct.ipynb**  (Task **2.2**)
    - Fine-tuning an alternative lightweight foundation model to compare with Llama-3 on CPU inference.  
-   - Demonstrates that smaller models can provide faster inference in the final Gradio UI while maintaining reasonable instruction-following capability.
+   - Experimental results show that the smaller model does not provide noticeable speed improvements, and its instruction-following quality is consistently weaker.
 
 Together, these experiments fulfill the lab requirement to explore multiple models and evaluate improvements through both model-centric and data-centric strategies.
 
